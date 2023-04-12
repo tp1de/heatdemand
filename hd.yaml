@@ -1,0 +1,52 @@
+- server: http://localhost:8123/api/
+- token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+- outdoortemp_entity: sensor.boiler_outdoortemp
+- outdoortemp_threshold: 4
+
+- thermostats:
+    
+  - room: WZ
+    entity: climate.wohnzimmer_thermostat
+    settemp: temperature
+    actualtemp: current_temperature
+    deltam: 0.25
+    hc: hc1
+    weight: 3
+    
+  - room: WG
+    entity: climate.wintergarten_thermostat
+    settemp: temperature
+    actualtemp: current_temperature
+    deltam: 0.25
+    hc: hc1
+    weight: 3  
+
+  - room: FB_Heizung
+    entity: climate.thermostat_hc2
+    settemp: temperature
+    actualtemp: current_temperature
+    deltam: 0.2
+    hc: hc2
+    weight: 5
+
+
+- heatingcircuits: 
+
+  - hc: hc1
+    weighton: 3
+    weightoff: 2
+    state: ems-esp/thermostat/hc1/tempautotemp
+    entity: number.thermostat_hc1_tempautotemp
+    on: -1
+    off: 0
+    savesettemp: false      
+      
+  - hc: hc2
+    weighton: 5
+    weightoff: 0
+    state: ems-esp/thermostat/hc2/tempautotemp
+    entity: number.thermostat_hc2_tempautotemp
+    on: -1
+    off: 0
+    savesettemp: true

@@ -8,7 +8,8 @@ The following technical prerequisites are needed:
 
 2.	MQTT Broker is installed and discovery prefix is set to standard “homeassistant”
 
-3.	additional “axios” module is configured within NR as additional npm package
+3.	additional “axios” module is configured within NR as additional npm package and added in settings.js for node-red in
+    functionGlobalContext -- see PDF or Word documentation
 
 4.	a longterm api access token is generated in HA
 
